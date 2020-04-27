@@ -19,9 +19,6 @@ def Perceptron_train(X, y, epoch_n, eta_lr):
     # initialize random weights of size = feature_size
     rng = np.random.default_rng()
     w = rng.standard_normal(size = 1 + X.shape[1])
-
-    #rn_generator = np.random.RandomState(seed=1)
-    #w = rn_generator.normal(loc = 0.0, scale = 0.1, size = 1 + X.shape[1])
     train_misclassifications = []
     for _ in range(epoch_n):
         # calculating z = W^T*X, net input
@@ -72,14 +69,11 @@ def Perceptron_test(w_learned, X_test):
         if z >= 0.0:
             test_predict.append(1)
         else:
-            test_predict.append(-1)
-    #class_predict = np.where(z>=0.0, 1, -1)
-    #error_test = y_test - class_predict
-    #test_misclassified.append(error)              
+            test_predict.append(-1)             
     return test_predict
 #--------------------------------------------------------------------------------
 
-
+#-------------------Adaline_Learning---------------------------------------------
 
 
 
