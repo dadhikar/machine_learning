@@ -52,7 +52,7 @@ def perceptron_test(w_learned, X_test, y_test):
     predict = np.where(z>=0.0, 1, -1)
     error= y_test - predict          
     return error
-def perceptron_decision_boundary(w_learned, X, y):
+def perceptron_decision_boundary(w_learned, X, X_test, y_test):
     """
     w_learned - weights learned during the training process
     X_test  - test data
@@ -73,8 +73,8 @@ def perceptron_decision_boundary(w_learned, X, y):
     cmap = ListedColormap(colors, N=None)
     plt.contourf(xx1, xx2, predict, cmap = cmap)
     #plotting test samples 
-    for idx, cl in enumerate(np.unique(y)):  
-        plt.scatter(x= X[y== cl, 0], y= X[y== cl, 1], c= colors[idx], 
+    for idx, cl in enumerate(np.unique(y_test)):  
+        plt.scatter(x= X_test[y_test== cl, 0], y= X_test[y_test== cl, 1], c= colors[idx], 
                        marker= markers[idx], edgecolor='k', label= cl)
     #plt.xlim(X[:, 0].min(), X[:, 0].max())
     #plt.ylim(X[:, 1].min(), X[:, 1].max())               
