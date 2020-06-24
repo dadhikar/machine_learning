@@ -30,7 +30,7 @@ def plot_data():
     None.
 
     """
-    data = load_mat_data(file_dir, 'data2.mat')
+    data = load_mat_data(file_dir, 'data3.mat')
     X = data["X"]
     y = data["y"].ravel()
     key_list = []
